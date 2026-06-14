@@ -159,6 +159,35 @@ JSON Response
 Client
 ```
 
+## Live URL 
+
+https://the-data-hub-zwil.onrender.com
+
+## Screenshots
+
+### Local Host : 5000
+<img width="1918" height="1142" alt="Screenshot 2026-06-14 092943" src="https://github.com/user-attachments/assets/6d0fa4b6-16cb-4c5c-b5c4-83d5e7cf6d01" />
+
+## CRUD (Create,Read,Update and Delete) Operations
+
+### POST
+<img width="1918" height="1137" alt="Screenshot 2026-06-14 093233" src="https://github.com/user-attachments/assets/78dca12b-3638-4423-92a0-924686ad11fb" />
+
+### GET all posts
+<img width="1918" height="1143" alt="Screenshot 2026-06-14 093323" src="https://github.com/user-attachments/assets/29fbff71-838a-4033-bf68-9391ec14d636" />
+
+### GET Single post
+<img width="1917" height="1147" alt="Screenshot 2026-06-14 093302" src="https://github.com/user-attachments/assets/62ea4b66-204e-46e7-8b3e-d25e3e11597a" />
+
+### Update post
+<img width="1918" height="1143" alt="Screenshot 2026-06-14 102515" src="https://github.com/user-attachments/assets/6edf1015-bf05-4b8d-8176-39d9b8acccd1" />
+
+### Delete Post
+<img width="1915" height="1137" alt="Screenshot 2026-06-14 093345" src="https://github.com/user-attachments/assets/3dc14aa0-580e-4b0d-818a-22007515cfbb" />
+
+### 404 NOT FOUND Error
+<img width="1918" height="1137" alt="Screenshot 2026-06-14 102538" src="https://github.com/user-attachments/assets/6f130ed8-b335-4cc9-973d-e479e1fcd352" />
+
 ## Future Enhancements
 
 * MongoDB Integration
@@ -166,7 +195,3 @@ Client
 * Input Validation
 * User Authorization
 * Cloud Deployment
-
-## Live URL 
-
-https://the-data-hub-zwil.onrender.com
