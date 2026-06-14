@@ -153,10 +153,14 @@ app.use((err, req, res, next) => {
 });
 
 // START SERVER
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log("====================================");
   console.log(`The Data Hub Server Running`);
   console.log(`URL: http://localhost:${PORT}`);
   console.log(`Port: ${PORT}`);
   console.log("====================================");
+});
+
+server.on("error", (err) => {
+  console.error("Server Error:", err);
 });
