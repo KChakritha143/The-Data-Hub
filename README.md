@@ -165,12 +165,8 @@ Client
 * JWT Authentication
 * Input Validation
 * User Authorization
+* Cloud Deployment
 
 ## Live URL 
 
 https://the-data-hub-zwil.onrender.com
-* Cloud Deployment
-
-
-
-GitHub: https://github.com/KChakritha143
