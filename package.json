@@ -1,0 +1,14 @@
+{
+  "name": "data-hub",
+  "version": "1.0.0",
+  "description": "The Data Hub - RESTful API Server",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test-api.js"
+  },
+  "dependencies": {
+    "express": "^4.22.2"
+  }
+}
