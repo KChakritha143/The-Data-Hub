@@ -166,7 +166,7 @@ https://the-data-hub-zwil.onrender.com
 ## Screenshots
 
 ### Local Host : 5000
-<img width="1918" height="1142" alt="Screenshot 2026-06-14 092943" src="https://github.com/user-attachments/assets/6d0fa4b6-16cb-4c5c-b5c4-83d5e7cf6d01" />
+<img width="1912" height="1088" alt="Screenshot 2026-06-15 191155" src="https://github.com/user-attachments/assets/bc93584f-af5d-4a75-bba3-bebd5c39e0c3" />
 
 ## CRUD (Create,Read,Update and Delete) Operations
 
