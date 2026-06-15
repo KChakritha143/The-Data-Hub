@@ -1,33 +1,27 @@
 import express from "express";
 const app = express();
+app.set("json spaces", 2);
 const PORT = process.env.PORT || 5000;
-
-// Middleware to parse JSON request bodies
 app.use(express.json());
 
-// Logger Middleware
 app.use((req, res, next) => {
   console.log(
     `${new Date().toISOString()} | ${req.method} | ${req.url}`
   );
   next();
 });
-
-// In-Memory Database
 let blogPosts = [];
 
-// ROOT ROUTE
 app.get("/", (req, res) => {
   res.status(200).json({
     success: true,
+    message: "Welcome to The Data Hub API",
     project: "The Data Hub",
     version: "1.0.0",
     totalPosts: blogPosts.length,
     status: "Running",
   });
 });
-
-// HEALTH CHECK
 app.get("/health", (req, res) => {
   res.status(200).json({
     success: true,
@@ -35,20 +29,12 @@ app.get("/health", (req, res) => {
     timestamp: new Date().toISOString(),
   });
 });
-
-//  GET ALL POSTS
   app.get("/posts", (req, res) => {
   const sortedPosts = [...blogPosts].sort(
     (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
   );
-  res.status(200).json({
-    success: true,
-    totalPosts: sortedPosts.length,
-    data: sortedPosts,
-  });
+  res.status(200).json(sortedPosts);
 });
-
-// GET SINGLE POST
 app.get("/posts/:id", (req, res) => {
   const { id } = req.params;
   const post = blogPosts.find((p) => p.id === id);
@@ -58,13 +44,8 @@ app.get("/posts/:id", (req, res) => {
       error: `Post with ID ${id} not found`,
     });
   }
-  res.status(200).json({
-    success: true,
-    data: post,
-  });
+  res.status(200).json(post);
 });
-
-// CREATE POST
 app.post("/posts", (req, res) => {
   const { title, content, ...otherDetails } = req.body;
   if (
@@ -89,11 +70,9 @@ app.post("/posts", (req, res) => {
   res.status(201).json({
     success: true,
     message: "Post created successfully",
-    data: newPost,
+    post: newPost,
   });
 });
-
-//  UPDATE POST
 app.put("/posts/:id", (req, res) => {
   const { id } = req.params;
   const { title, content } = req.body;
@@ -114,11 +93,9 @@ app.put("/posts/:id", (req, res) => {
   res.status(200).json({
     success: true,
     message: "Post updated successfully",
-    data: updatedPost,
+    post: updatedPost,
   });
 });
-
-// DELETE POST
 app.delete("/posts/:id", (req, res) => {
   const { id } = req.params;
   const postExists = blogPosts.some((p) => p.id === id);
@@ -134,16 +111,12 @@ app.delete("/posts/:id", (req, res) => {
     message: `Post with ID ${id} deleted successfully`,
   });
 });
-
-// 404 ROUTE HANDLER
 app.use((req, res) => {
   res.status(404).json({
     success: false,
     error: "Route not found",
   });
 });
-
-// GLOBAL ERROR HANDLER
 app.use((err, req, res, next) => {
   console.error(err);
   res.status(500).json({
@@ -151,16 +124,11 @@ app.use((err, req, res, next) => {
     error: "Internal Server Error",
   });
 });
-
-// START SERVER
 const server = app.listen(PORT, () => {
-  console.log("====================================");
   console.log(`The Data Hub Server Running`);
   console.log(`URL: http://localhost:${PORT}`);
   console.log(`Port: ${PORT}`);
-  console.log("====================================");
 });
-
 server.on("error", (err) => {
   console.error("Server Error:", err);
 });
